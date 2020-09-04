@@ -14,10 +14,50 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
+    font-family: var(--font-josefin);
 }
 
 /* Main component Styles */
-
+.main__title {
+    text-transform: uppercase;
+}
+.main__title-span {
+    color: var(--desaturated-red);
+    font-weight: 300;
+}
+.main__paragraph {
+    color: var(--desaturated-red);
+}
+.form {
+    position: relative;
+}
+.form__email {
+    font-family: inherit;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--desaturated-red);
+    border-radius: 2rem 2rem;
+    width: 100%;
+}
+.form__error-icon {
+    position: absolute;
+    right: 70px;
+    top: 12px;
+}
+.form__btn-submit {
+    border: none;
+    background-color: pink;
+    padding: 14px 1.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.form__error-msg {
+    color: var(--desaturated-red);
+    font-size: 12px;
+    margin-left: 1.5rem;
+}
 
 /* complementary classes */
 .attribution {
