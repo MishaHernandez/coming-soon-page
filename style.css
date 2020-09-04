@@ -7,8 +7,8 @@
     --soft-red: hsl(0, 93%, 68%);
     --dark-grayish-red: hsl(0, 6%, 24%);
     --font-josefin: 'Josefin Sans', sans-serif;
-    /* Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) */
-    /* Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)  */
+    --gradient-1: linear-gradient(90deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    /* --gradient-2: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%)); */
 }
 body {
     margin: 0;
@@ -18,45 +18,90 @@ body {
 }
 
 /* Main component Styles */
+.header {
+    padding: 2rem;
+}
+.header img {
+    height: 21px;
+}
+.hero-img {
+    height: 250px;
+    background-image: url(images/hero-mobile.jpg);
+}
+.main {
+    padding: 2.5rem 2.4rem;
+    background-color: #FFF7F8;
+}
 .main__title {
+    margin-top: 1.6rem;
+    margin-bottom: 12px;
+    font-size: 40px;
     text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 12px;
+    line-height: 2.7rem;
 }
 .main__title-span {
     color: var(--desaturated-red);
     font-weight: 300;
 }
 .main__paragraph {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4rem;
     color: var(--desaturated-red);
 }
 .form {
     position: relative;
 }
 .form__email {
-    font-family: inherit;
+    width: 100%;
     padding: 1rem 1.5rem;
     border: 1px solid var(--desaturated-red);
     border-radius: 2rem 2rem;
-    width: 100%;
+    font-family: inherit;
+    background-color: inherit;
+}
+.form__email::placeholder {
+    color: var(--desaturated-red);
+}
+.email--active {
+    border: 1px solid red;
 }
 .form__error-icon {
     position: absolute;
     right: 70px;
     top: 12px;
+    opacity: 0;
+}
+.error-icon--active {
+    opacity: 1;
 }
 .form__btn-submit {
     border: none;
-    background-color: pink;
-    padding: 14px 1.5rem;
+    padding: 14px 1.6rem;
     border-radius: 1.5rem;
     cursor: pointer;
+    background-image: var(--gradient-1);
+    box-shadow: 0 10px 10px lightgray;
     position: absolute;
     right: 0;
     top: 0;
 }
+.form__btn-submit:hover {
+    background-image: var(--gradient-2);
+    box-shadow: 0 10px 10px lightgray;
+}
 .form__error-msg {
+    margin-left: 1.5rem;
     color: var(--desaturated-red);
     font-size: 12px;
-    margin-left: 1.5rem;
+    opacity: 0;
+}
+.error-msg--active {
+    opacity: 1;
 }
 
 /* complementary classes */
