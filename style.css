@@ -15,11 +15,21 @@ body {
     padding: 0;
     font-size: 16px;
     font-family: var(--font-josefin);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header    header"
+                         "hero-img  hero-img"
+                         "main      main"
+                         "footer    footer";
 }
 
 /* Main component Styles */
 .header {
     padding: 2rem;
+
+    grid-area: header;
 }
 .header img {
     height: 21px;
@@ -27,10 +37,14 @@ body {
 .hero-img {
     height: 250px;
     background-image: url(images/hero-mobile.jpg);
+
+    grid-area: hero-img;
 }
 .main {
     padding: 2.5rem 2.4rem;
     background-color: #FFF7F8;
+
+    grid-area: main;
 }
 .main__title {
     margin-top: 1.6rem;
@@ -105,6 +119,9 @@ body {
 }
 
 /* complementary classes */
+.footer {
+    grid-area: footer;
+}
 .attribution {
     font-size: 11px;
     text-align: center;
