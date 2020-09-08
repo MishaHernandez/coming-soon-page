@@ -14,8 +14,11 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    font-family: var(--font-josefin);
+}
 
+/* Main component Styles */
+.container {
+    font-family: var(--font-josefin);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
@@ -24,8 +27,6 @@ body {
                          "main      main"
                          "footer    footer";
 }
-
-/* Main component Styles */
 .header {
     padding: 2rem;
 
@@ -42,16 +43,17 @@ body {
 }
 .main {
     padding: 2.5rem 2.4rem;
-    background-color: #FFF7F8;
 
     grid-area: main;
+}
+.main__title, .main__paragraph {
+    text-align: center;
 }
 .main__title {
     margin-top: 1.6rem;
     margin-bottom: 12px;
     font-size: 40px;
     text-transform: uppercase;
-    text-align: center;
     letter-spacing: 12px;
     line-height: 2.7rem;
 }
@@ -62,7 +64,6 @@ body {
 .main__paragraph {
     margin-top: 0;
     margin-bottom: 2rem;
-    text-align: center;
     font-size: 14px;
     line-height: 1.4rem;
     color: var(--desaturated-red);
@@ -128,4 +129,55 @@ body {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/* Media queries */
+@media (min-width: 1200px) {
+    .container {
+        height: 100vh;
+        grid-template-columns: 57% 43%;
+        grid-template-rows: 20% 70% 10%;
+        grid-template-areas: "header    hero-img"
+                             "main      hero-img"
+                             "footer    hero-img";
+        background-image: url(images/bg-pattern-desktop.svg);
+    }
+    .header {
+        padding: 0 2.4rem;
+    }
+    .header img {
+        height: 31px;
+    }
+    .hero-img {
+        height: 100%;
+        background-image: url(images/hero-desktop.jpg);
+        background-size: cover;
+    }
+    .main__title, .main__paragraph {
+        text-align: left;
+    }
+    .main__title  {
+        font-size: 60px;
+        line-height: 4rem;
+    }
+    .main__paragraph {
+        font-size: 1rem;
+    }
+    .form__email {
+        font-size: 1rem;
+    }
+    .form__btn-submit {
+        padding: 16px 2.6rem;
+        border-radius: 2.6rem;
+    }
+    .footer {
+        background-color: inherit;
+    }
+    /* common clases */
+    .header, .main {
+        width: 64%;
+    }
+    .header, .main, .footer {
+        margin: auto;
+    }
 }
